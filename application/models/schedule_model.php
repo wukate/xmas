@@ -5,7 +5,17 @@ class Schedule_model extends CI_Model {
     {
         parent::__construct();
     }
-
+    // 取得當日排程
+    function get_date_schedule($date=''){
+        if($date){
+            $this->db->where('s_date', $date);
+            $query = $this->db->get('schedules');
+            
+            return $query->row();
+        }else{
+            return FALSE;
+        }
+    }
     // 取得所有排程
     function get_all()
     {

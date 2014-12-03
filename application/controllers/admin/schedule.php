@@ -6,25 +6,23 @@ class Schedule extends CI_Controller {
 	{
 		parent::__construct();
 		// WEB路徑設置
-		$this->data['WEB_CSS'] = '/Xmas/resource/dist/css/';
-		$this->data['WEB_JS'] = '/Xmas/resource/dist/js/';
+		$this->data['WEB_CSS'] = '/Xmas/resource/css/';
+		$this->data['WEB_JS'] = '/Xmas/resource/css/dist/js/';
 
 		// 載入model 
 		$this->load->model('schedule_model');
 
 		// 載入縮圖helper
 		$this->load->helper('image');
-
-		if(!$this->session->userdata('logged_in'))
-			//If no session, redirect to login page
-			redirect('/admin/login', 'location', 301);exit();
-		}
 	}
 
 	// 首頁
 	public function index()
 	{
-
+		if(!($this->session->userdata('logged_in'))){
+			//If no session, redirect to login page
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
+		}
 		$this->data['schedules'] = $this->schedule_model->get_all();
 
 		$this->load->view('admin/schedule/index',$this->data);
@@ -32,6 +30,10 @@ class Schedule extends CI_Controller {
 
 	public function add()
 	{
+		if(!($this->session->userdata('logged_in'))){
+			//If no session, redirect to login page
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
+		}
 		$post_data = $this->input->post();
 
 		if($post_data){
@@ -70,6 +72,10 @@ class Schedule extends CI_Controller {
 	}
 
 	public function edit($id){
+		if(!($this->session->userdata('logged_in'))){
+			//If no session, redirect to login page
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
+		}
 		$this->data['schedule_res'] = $this->schedule_model->get_schedule($id);
 
 		if(is_numeric($id) && $this->data['schedule_res']){
@@ -115,6 +121,10 @@ class Schedule extends CI_Controller {
 	}
 
 	public function del($id){
+		if(!($this->session->userdata('logged_in'))){
+			//If no session, redirect to login page
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
+		}
 		if(is_numeric($id)){
 			$del_res = $this->schedule_model->del_schedule($id);
 			if($del_res){

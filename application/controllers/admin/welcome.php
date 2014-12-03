@@ -1,17 +1,21 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Welcome extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		// WEB路徑設置
-		$this->data['WEB_CSS'] = '/Xmas/resource/dist/css/';
+		$this->data['WEB_CSS'] = '/Xmas/resource/css/dist/css/';
+		$this->data['WEB_JS'] = '/Xmas/resource/css/dist/js/';
 		// 載入model 
 		$this->load->model('user_model');
 	}
 
-	public function index()
+	public function index(){
+		$this->login();
+	}
+	public function login()
 	{
 		$post_data = $this->input->post();
 		if($post_data){
@@ -24,14 +28,23 @@ class Login extends CI_Controller {
 					'id' => $user->id,
 					'account' => $user->account
 				);
+
 				$this->session->set_userdata('logged_in', $sess_array);
+
 				redirect('/admin/schedule', 'location', 301);exit();
 			}else{
-				$this->basetools->alert_redirect('帳號或密碼錯誤，請重新輸入!!', base_url('admin/login'));exit();
+				$this->basetools->alert_redirect('帳號或密碼錯誤，請重新輸入!!', base_url('admin/welcome'));exit();
 			}
 		}else{
 			$this->load->view('admin/login',$this->data);	
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('logged_in');
+		session_destroy();
+		redirect('/admin/welcome', 'location', 301);exit();
 	}
 }
 

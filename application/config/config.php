@@ -1,5 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-$config['charset'] = "UTF-8";
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -78,9 +78,9 @@ $config['language']	= 'english';
 |
 | This determines which character set is used by default in various methods
 | that require a character set to be provided.
-|
+| $config['charset'] = 'UTF-8';
 */
-$config['charset'] = 'UTF-8';
+$config['charset'] = "UTF-8";
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'qbonxmasadmin';
 
 /*
 |--------------------------------------------------------------------------

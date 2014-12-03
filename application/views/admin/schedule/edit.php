@@ -10,7 +10,7 @@
     <title>Qbon Xmas - 編輯日曆</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=$WEB_CSS;?>bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $WEB_CSS;?>/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
@@ -26,54 +26,40 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Qbon Xmas</a>
-        </div>
-      </div>
-    </nav>
-
+    <?php echo  file_get_contents(base_url('admin/base/topbar'))?>
     <div class="container-fluid">
       <div class="row">
-        <?= file_get_contents(base_url('admin/sidebar/index'))?>
+        <?php echo  file_get_contents(base_url('admin/base/sidebar'))?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">編輯日曆</h1>
           <!-- CONTENT START -->
           <div class="container">
       
             <!-- insert song start -->
-            <form class="form-horizontal" action="<?=base_url('admin/schedule/edit/'.$schedule_res->id);?>" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="<?php echo base_url('admin/schedule/edit/'.$schedule_res->id);?>" method="post" enctype="multipart/form-data">
               <div class="control-group">
                 <label class="control-label" for="inputName">顯示日期</label>
                 <div class="controls">
-                  <input type="text" id="s_date" name="s_date" placeholder="Enter date..." value="<?=$schedule_res->s_date;?>">格式:2014-01-01
+                  <input type="text" id="s_date" name="s_date" placeholder="Enter date..." value="<?php echo $schedule_res->s_date;?>">格式:2014-01-01
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label" for="inputName">標題</label>
                 <div class="controls">
-                  <input type="text" id="title" name="title" placeholder="Enter title..." value="<?=$schedule_res->title;?>">建議字數：中文字 - 12個
+                  <input type="text" id="title" name="title" placeholder="Enter title..." value="<?php echo $schedule_res->title;?>">建議字數：中文字 - 12個
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label" for="inputName">連結</label>
                 <div class="controls">
-                  <input type="text" id="link" name="link" placeholder="Enter link..." value="<?=$schedule_res->link;?>">
+                  <input type="text" id="link" name="link" placeholder="Enter link..." value="<?php echo $schedule_res->link;?>">
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label" for="inputFile">File</label>
                 <div class="controls">
                   <input type="file" id="file" name="file">建議尺寸：148px * 175px<br>
-                  <?php if(!empty($schedule_res->pic)){?><img src="/Xmas/uploads/<?=$schedule_res->pic;?>"><?php }?>
+                  <?php if(!empty($schedule_res->pic)){?><img src="/Xmas/uploads/<?php echo $schedule_res->pic;?>"><?php }?>
                 </div>
               </div>
               <div class="control-group">
@@ -94,7 +80,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="<?=$WEB_JS;?>bootstrap.min.js"></script>
+    <script src="<?php echo $WEB_JS;?>bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
