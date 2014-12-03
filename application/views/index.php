@@ -22,7 +22,8 @@
 <!--[if lt IE 9]>
     <link href="css/main.css" rel="stylesheet" type="text/css">
 <![endif]-->
-<script src="<?php echo $WEB_JS;?>flycan.js" type="text/javascript"></script>
+<!-- <script src="<?php //echo $WEB_JS;?>flycan.js" type="text/javascript"></script> -->
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
