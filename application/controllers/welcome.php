@@ -44,7 +44,7 @@ class Welcome extends CI_Controller {
 			}
 
 			// mobile
-			if(!$agent == 'desktop' || $debug == 'mobile'){
+			if($agent != 'desktop' || $debug == 'mobile'){
 				$tmpDaily['date'] = $get_date;
 
 				if($get_date>='2014-12-01' && $get_date <= '2014-12-05'){
@@ -78,9 +78,8 @@ class Welcome extends CI_Controller {
 		// $this->data['Todate'] = date('Y-m-d');
 		$this->data['Todate'] = '2014-12-03';
 		// 判斷載入手機或手機版面
-		var_dump($agent);
-		exit();
-		if(!$agent == 'desktop' || $debug == 'mobile'){
+		
+		if($agent != 'desktop' || $debug == 'mobile'){
 			$this->data['TodateSchedules'] = $DailySchedules[$this->data['Todate']];//今日好康
 			$this->data['MobileDailySchedules'] = $MobileDailySchedules;
 			$this->load->view('mobile',$this->data);
