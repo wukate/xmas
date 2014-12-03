@@ -35,9 +35,6 @@
 
 </script>
 </head>
-
-
-
 <body>
 
 	<!-- 表頭 -->
@@ -165,7 +162,7 @@
     
     <div id="STOREEE">
     	<div id="STOREfb">
-        	<p><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FQbon.inside&amp;width=990&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=800585080003362" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:990px; height:290px;" allowTransparency="true"></iframe></p>
+        	<p><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FQbon.inside&amp;width&amp;height=62&amp;colorscheme=light&amp;show_faces=false&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=800585080003362" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:62px;" allowTransparency="true"></iframe></p>
         </div>
     </div>
     
@@ -215,7 +212,7 @@
     
 
 
-<!-- <script src="<?php echo $WEB_JS;?>mobile/pgwslider.js"></script><script src="js/pgwslider.min.js"></script> -->
+<!-- <script src="<?php //echo $WEB_JS;?>mobile/pgwslider.js"></script><script src="js/pgwslider.min.js"></script> -->
 
 <script type="text/javascript" src="<?php echo $WEB_JS;?>mobile/jquery-1.4.2.min.js"></script>
 <script type="text/javascript"> 
