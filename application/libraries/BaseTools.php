@@ -8,7 +8,7 @@ class BaseTools {
     public function alert_redirect($msg='',$url='')
     {
     	if($msg && $url){
-    		echo "<script>alert('" . $msg . "');window.location.href='" . $url . "';</script>";
+    		echo "<script type='text/javascript'>alert('" . $msg . "');window.location.href='" . $url . "';</script>";
     	}else{
     		return FALSE;
     	}
@@ -16,4 +16,4 @@ class BaseTools {
     }
 }
 
-/* End of file BaseTools.php */
+/* End of file basetools.php */

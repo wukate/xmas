@@ -6,9 +6,9 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		// WEB路徑設置
-		$this->data['WEB_CSS'] = '/xmas/resource/css/';
-		$this->data['WEB_JS'] = '/xmas/resource/js/';
-		$this->data['WEB_IMG'] = '/xmas/resource/images/';
+		$this->data['WEB_CSS'] = '/Xmas/resource/css/';
+		$this->data['WEB_JS'] = '/Xmas/resource/js/';
+		$this->data['WEB_IMG'] = '/Xmas/resource/images/';
 
 		// 載入model 
 		$this->load->model('schedule_model');

@@ -6,9 +6,9 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		// WEB路徑設置
-		$this->data['WEB_CSS'] = '/xmas/resource/css/';
-		$this->data['WEB_JS'] = '/xmas/resource/js/';
-		$this->data['WEB_IMG'] = '/xmas/resource/images/';
+		$this->data['WEB_CSS'] = '/Xmas/resource/css/';
+		$this->data['WEB_JS'] = '/Xmas/resource/js/';
+		$this->data['WEB_IMG'] = '/Xmas/resource/images/';
 		// 載入model 
 		$this->load->model('user_model');
 	}
@@ -32,7 +32,7 @@ class Welcome extends CI_Controller {
 
 				$this->session->set_userdata('logged_in', $sess_array);
 
-				redirect('/admin/schedule', 'location', 301);exit();
+				redirect('admin/schedule', 'location', 301);exit();
 			}else{
 				$this->basetools->alert_redirect('帳號或密碼錯誤，請重新輸入!!', base_url('admin/welcome'));exit();
 			}
@@ -45,7 +45,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->session->unset_userdata('logged_in');
 		session_destroy();
-		redirect('/admin/welcome', 'location', 301);exit();
+		redirect('admin/welcome', 'location', 301);exit();
 	}
 }
 

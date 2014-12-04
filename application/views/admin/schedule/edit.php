@@ -10,7 +10,7 @@
     <title>Qbon Xmas - 編輯日曆</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo $WEB_CSS;?>/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $WEB_CSS;?>dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
@@ -26,17 +26,17 @@
   </head>
 
   <body>
-    <?php echo  file_get_contents(base_url('admin/base/topbar'))?>
+    <?php echo  file_get_contents(base_url('index.php/admin/base/topbar'))?>
     <div class="container-fluid">
       <div class="row">
-        <?php echo  file_get_contents(base_url('admin/base/sidebar'))?>
+        <?php echo  file_get_contents(base_url('index.php/admin/base/sidebar'))?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">編輯日曆</h1>
           <!-- CONTENT START -->
           <div class="container">
       
             <!-- insert song start -->
-            <form class="form-horizontal" action="<?php echo base_url('admin/schedule/edit/'.$schedule_res->id);?>" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="<?php echo base_url('index.php/admin/schedule/edit/'.$schedule_res->id);?>" method="post" enctype="multipart/form-data">
               <div class="control-group">
                 <label class="control-label" for="inputName">顯示日期</label>
                 <div class="controls">

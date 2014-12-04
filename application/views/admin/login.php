@@ -9,8 +9,8 @@
     <title>Qbon Xmas - 登入</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo $WEB_CSS;?>bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo $WEB_CSS;?>login.css" rel="stylesheet">
+    <link href="<?php echo $WEB_CSS;?>dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $WEB_CSS;?>dist/css/login.css" rel="stylesheet">
     
   </head>
 
