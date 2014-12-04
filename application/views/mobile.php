@@ -40,7 +40,7 @@
 	<!-- 表頭 -->
 	<div id="TOP">
     	<div id="TOPC">
-        <a href="http://www.qbon.com.tw/" target="_blank">
+        <a href="https://www.facebook.com/Qbon.inside" target="_blank">
         <img src="<?php echo $WEB_IMG;?>mobile/indeximage_p.jpg" width="100%" boder="0"/>
         </a>
     </div>
@@ -105,15 +105,18 @@
                             $pic = isset($value['pic'])?'<img src="'.$value['pic'].'" width="100%" />':'';
                             $link = isset($value['link'])?$value['link']:'';
                         }
+
+                        if($pic && $link && $title){
+                            $show_area = '<div class="ptypet"><p class="montypet">' . $show_date . '</p><p class="montypecct">' . $title . '</p></div>';
+                        }else{
+                            $show_area = '<div class="ALLBlack"><div class="ptypet"><p class="montypetb">' . $show_date . '</p><p class="montypecctb">' . $title . '</p></div></div>';
+                        }
                 ?>
                     <div class="DTOPboxt">
                         <div class="pboxt">
-                        <?php echo $pic;?>  
+                        <?php echo $pic;?>
                         </div>
-                        <div class="ptypet">
-                        <p class="montypet"><?php echo $show_date;?></p>
-                        <p class="montypecct"><?php echo $title;?></p>
-                        </div>
+                        <?=$show_area;?>
                     </div>
                 <?php 
                     }
@@ -131,7 +134,7 @@
     <div id="EVENT">
     	<div id="EVENTt">
         	<div id="Eboxo">
-                <a href="www.zeusdesign.com.tw" target="_blank">
+                <a href="https://www.facebook.com/Qbon.inside" target="_blank">
                 <img src="<?php echo $WEB_IMG;?>mobile/eventbg_p.jpg" width="100%" border="0"/>
                 </a>
        		</div>
@@ -149,8 +152,8 @@
     	<div id="STOREct">
             <div id="LEFTbox">
             	<ul>
-                <li class="google"><a href="#" ></a></li>
-                <li class="apple"><a href="#" ></a></li>
+                <li class="google"><a href="https://play.google.com/store/apps/details?id=com.hiiir.qbon" target="_blank"></a></li>
+                <li class="apple"><a href="https://itunes.apple.com/tw/app/qbon-you-hui-qiang/id737568220?mt=8" target="_blank"></a></li>
                 </ul>
           </div>
             
@@ -168,49 +171,51 @@
     
     <!-- 表尾 -->
     <div id="FOOTER">
-    	<div id="FOOTERC">
-        	<div class="logobox">
-            	<div class="logo">
+        <div id="FOOTERC">
+            <div class="logobox">
+                <div class="logo">
                 <p class="footypetitl">主辦單位</p>
                 <a href="https://www.facebook.com/Qbon.inside"  target="_blank">
-                <img src="<?php echo $WEB_IMG;?>mobile/icon_flogo.png" width="111" height="33" border="0"/>
+                <img src="<?php echo $WEB_IMG;?>icon_flogo.png" width="111" height="33" border="0"/>
                 </a>
                 </div>
                 
                 <div class="logot">
                 <a href="http://www.hiiir.com/" target="_blank">
-                <img src="<?php echo $WEB_IMG;?>mobile/icon_hiiir.png" width="44" height="33" border="0"/> 
+                <img src="<?php echo $WEB_IMG;?>icon_hiiir.png" width="63" height="50" border="0"/> 
                 </a>
                 </div>
                 
                 <div class="logo">
                 <p class="footypetitl">協辦單位</p>
                  <a href="http://www.miramar.com.tw/" target="_blank">
-                 <img src="<?php echo $WEB_IMG;?>mobile/icon_miramar.png" width="80" height="42" border="0"/>
+                 <img src="<?php echo $WEB_IMG;?>icon_miramar.png" width="80" height="42" border="0"/>
                  </a>
                 </div>
         </div>
-        
         <div class="logobox">
-                <div class="logo">
+                <div class="logos">
                 <p class="footypetitl">贊助單位</p>
-                 <a href="http://www.miramar.com.tw/" target="_blank">
-                 <img src="<?php echo $WEB_IMG;?>mobile/icon_big.png" width="143" height="33" border="0"/>
+                <a href="https://www.facebook.com/Originstw1?fref=ts" target="_blank">
+                 <img src="<?php echo $WEB_IMG;?>icon_origin.png" width="63" height="50" border="0"/>
                  </a>
                 </div>
                 
                 <div class="logott">
                 <a href="http://www.fecityonline.com/MegaCity/index.do" target="_blank">
-                <img src="<?php echo $WEB_IMG;?>mobile/icon_black.png" width="58" height="33" border="0"/> 
-                </a>
+                <img src="<?php echo $WEB_IMG;?>icon_black.png" width="58" height="33" border="0"/>
+                </a> 
+                </div>
+                
+                <div class="logott">
+                <a href="https://www.facebook.com/cottondeer?fref=ts " target="_blank">
+                <img src="<?php echo $WEB_IMG;?>IMG_8030.JPG" width="118" height="33" border="0"/>
+                </a> 
                 </div>
             </div>
             <p class="footype">時間軸科技股份有限公司版權所有2014 © Copyright Hiiir Inc. All Rights Reserved.</p>
         </div>
-        
     </div>
-    
-
 
 <!-- <script src="<?php //echo $WEB_JS;?>mobile/pgwslider.js"></script><script src="js/pgwslider.min.js"></script> -->
 

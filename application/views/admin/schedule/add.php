@@ -47,13 +47,13 @@
               <div class="control-group">
                 <label class="control-label" for="inputName">標題</label>
                 <div class="controls">
-                  <input type="text" id="title" name="title" placeholder="Enter title...">建議字數：中文字 - 12個
+                  <input type="text" id="title" name="title" placeholder="Enter title..." maxlength="10">建議字數：中文字 - 10個
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label" for="inputName">連結</label>
                 <div class="controls">
-                  <input type="text" id="link" name="link" placeholder="Enter link...">
+                  <input type="text" id="link" name="link" placeholder="Enter link...">網址請加上「http://」 or 「https://」
                 </div>
               </div>
               <div class="control-group">

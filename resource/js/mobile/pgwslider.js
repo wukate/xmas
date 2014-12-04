@@ -7,10 +7,10 @@
  * Released under the GNU GPLv3 license - http://opensource.org/licenses/gpl-3.0
  */
 ;(function($){
-    $.fn.pgwSlider = function(options) {
+    $.fn.pboxtb = function(options) {
 
         var defaults = {
-            mainClassName : 'pgwSlider',
+            mainClassName : 'pboxtb',
             listPosition : 'right',
             selectionMode : 'click',
             transitionEffect : 'fading',

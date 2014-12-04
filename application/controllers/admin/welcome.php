@@ -34,7 +34,7 @@ class Welcome extends CI_Controller {
 
 				redirect('admin/schedule', 'location', 301);exit();
 			}else{
-				$this->basetools->alert_redirect('帳號或密碼錯誤，請重新輸入!!', base_url('admin/welcome'));exit();
+				$this->basetools->alert_redirect('帳號或密碼錯誤，請重新輸入!!', base_url('index.php/admin/welcome'));exit();
 			}
 		}else{
 			$this->load->view('admin/login',$this->data);	

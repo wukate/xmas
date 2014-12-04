@@ -127,6 +127,59 @@ html{
 	line-height:1.2em;
 	}
 	
+/*---- 1204 start ----*/
+.ALLBlack {
+	margin:0 0 5px 0;
+	width:100%;
+	height:130px;
+	background:black;
+	opacity: 0.5;
+	filter:Alpha(Opacity=50, Style=0)
+	}
+	
+.DTOPboxtb {
+	float:left;
+	margin:0 0 5px 0;
+	width:100%;
+	height:130px;
+	background-color:#f1f1f1;
+	}
+	
+.pboxtb {
+	float:left;
+	width:120px;
+	height:120px;
+	margin:5px 5px;
+	}
+	
+.pboxtb img {
+	width:100%;
+	height:auto;
+	}
+	
+.ptypetb {
+	float:left;
+	width:60%;
+	height:100%;
+	margin:10px 5px 5px 5px ;
+	}
+	
+.montypetb {
+	display:block;
+	width:100%;
+	font-size:1em;
+	color:#1e8365;
+	line-height:2em;
+	}
+
+.montypecctb {
+	font-size:.8em;
+	color:#fff;
+	line-height:1.2em;
+	}
+/*---- 1204 end ----*/	
+
+		
 /*------- 下拉內容 end -----*/
 
 .container {
@@ -282,12 +335,14 @@ h2.active {
 #STOREE #STOREct #LEFTbox li.google a:hover{background-position:0px -42px;}
 #STOREE #STOREct #LEFTbox li.apple a:hover{background-position:-132px -42px}
 
-	
+
+/*--- 1204 start ---*/	
 #STOREE #STOREct #RIGHTbox {
-	float:left;
-	width:100%;
+	margin:0 auto;
+	width:430px;
 	height:388px;
 	}
+/*--- 1204 end ---*/	
 	
 #STOREE #STOREct #RIGHTbox img{
 	float:left;
@@ -298,14 +353,15 @@ h2.active {
 #STOREEE {
 	float:left;
 	width:100%;
-	min-height:300px;
+	min-height:120px;
 	height:100%;
 	}	
 
 #STOREEE #STOREfb {
+	float:left;
 	margin:0 auto;
 	width:100%;
-	height:250px;
+	height:80px;
 	padding:10px 10px;
 	}
 
@@ -345,13 +401,19 @@ h2.active {
 #FOOTER #FOOTERC .logobox .logot {
 	float:left;
 	width:80px;
-	margin:25px 10px 0 0;
+	margin:15px 10px 0 0;
+	}
+
+#FOOTER #FOOTERC .logobox .logos {
+	float:left;
+	width:80px;
+	margin-right:10px;
 	}
 	
 #FOOTER #FOOTERC .logobox .logott {
 	float:left;
 	width:80px;
-	margin:25px 20px 0 30px;
+	margin:25px 10px 0 0;
 	}
 
 	

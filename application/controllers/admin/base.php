@@ -17,7 +17,7 @@ class Base extends CI_Controller {
 	// 上方Bar
 	public function topbar()
 	{
-		$this->data['logout'] = base_url('admin/welcome/logout');
+		$this->data['logout'] = base_url('index.php/admin/welcome/logout');
 		$this->load->view('admin/topbar',$this->data);
 	}
 }

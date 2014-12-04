@@ -40,7 +40,7 @@
     <!-- 表頭 -->
     <div id="TOP">
         <div id="TOPC">
-        <a href="http://www.qbon.com.tw/" target="_blank">
+        <a href="https://www.facebook.com/Qbon.inside" target="_blank">
         <img src="<?php echo $WEB_IMG?>titleimage.jpg" width="100%" boder="0"/>
         </a>
     </div>
@@ -129,7 +129,7 @@
     <!-- FB活動 -->
     <div id="EVENT">
         <div id="EVENTC">
-            <a class="btn-orange" href="#">立即上傳</a>
+            <a class="btn-orange" href="https://www.facebook.com/Qbon.inside" target="_blank">立即上傳</a>
         </div>
     </div>
     
@@ -138,8 +138,8 @@
         <div id="STOREC">
             <div id="sboxbg">
                 <ul>
-                <li class="google"><a href="#" ></a></li>
-                <li class="apple"><a href="#" ></a></li>
+                <li class="google"><a href="https://play.google.com/store/apps/details?id=com.hiiir.qbon" target="_blank"></a></li>
+                <li class="apple"><a href="https://itunes.apple.com/tw/app/qbon-you-hui-qiang/id737568220?mt=8" target="_blank"></a></li>
                 </ul>
             </div>
             
@@ -162,7 +162,7 @@
                 
                 <div class="logot">
                 <a href="http://www.hiiir.com/" target="_blank">
-                <img src="<?php echo $WEB_IMG?>icon_hiiir.png" width="44" height="33" border="0"/> 
+                <img src="<?php echo $WEB_IMG?>icon_hiiir.png" width="63" height="50" border="0"/> 
                 </a>
                 </div>
                 
@@ -173,16 +173,22 @@
                 </a>
                 </div>
                 
-                <div class="logo">
+                <div class="logos">
                 <p class="footypetitl">贊助單位</p>
-                <a href="http://www.miramar.com.tw/" target="_blank">
-                 <img src="<?php echo $WEB_IMG?>icon_big.png" width="143" height="33" border="0"/>
+                <a href="https://www.facebook.com/Originstw1?fref=ts" target="_blank">
+                 <img src="<?php echo $WEB_IMG?>icon_origin.png" width="63" height="50" border="0"/>
                  </a>
                 </div>
                 
                 <div class="logott">
                 <a href="http://www.fecityonline.com/MegaCity/index.do" target="_blank">
                 <img src="<?php echo $WEB_IMG?>icon_black.png" width="58" height="33" border="0"/>
+                </a> 
+                </div>
+                
+                <div class="logott">
+                <a href="https://www.facebook.com/cottondeer?fref=ts " target="_blank">
+                <img src="<?php echo $WEB_IMG?>IMG_8030.JPG" width="118" height="33" border="0"/>
                 </a> 
                 </div>
             </div>

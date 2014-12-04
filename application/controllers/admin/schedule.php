@@ -45,14 +45,19 @@ class Schedule extends CI_Controller {
 			if($schedule){
 				$this->basetools->alert_redirect('此日期已有活動，請重新輸入!!', base_url('index.php/admin/schedule/add'));exit();
 			}else{
+				$link = trim($post_data['link']);
+				if((strpos ($link, "http://")) === false && (strpos ($link, "https://")) === false){
+					$link = 'http://'.$link;
+				}
+
 				$insert_array = array(
 					's_date' => trim($post_data['s_date']),
 					'title' => trim($post_data['title']),
-					'link' => trim($post_data['link'])
+					'link' => $link
 				);
 				$insert_id = $this->schedule_model->add_schedule($insert_array);
 
-				if(is_numeric($insert_id)){
+				if(is_numeric($insert_id) && $_FILES['file']['name']){
 					// 製作縮圖
 					$filename = pathinfo($_FILES['file']['name'], PATHINFO_FILENAME );
 					$thumb_filename = image_thumb($_FILES['file']['tmp_name'], $filename, 148, 175 );
@@ -88,19 +93,23 @@ class Schedule extends CI_Controller {
 				if($schedule){
 					$this->basetools->alert_redirect('此日期已有活動，請重新輸入!!', base_url('index.php/admin/schedule/edit/'.$id));exit();
 				}else{
-					
+					$link = trim($post_data['link']);
+					if((strpos ($link, "http://")) === false && (strpos ($link, "https://")) === false){
+						$link = 'http://'.$link;
+					}
+
 					$update_array = array(
 						's_date' => trim($post_data['s_date']),
 						'title' => trim($post_data['title']),
-						'link' => trim($post_data['link'])
+						'link' => $link
 					);
 					$update_schedule = $this->schedule_model->edit_schedule($update_array,$id);
 
-					if($_FILES){
+					if($_FILES['file']['name']){
 						// 製作縮圖
 						$filename = pathinfo($_FILES['file']['name'], PATHINFO_FILENAME );
 						$thumb_filename = image_thumb($_FILES['file']['tmp_name'], $filename, 148, 175 );
-						
+							
 						$update_array = array(
 							'pic' => trim($thumb_filename)
 						);

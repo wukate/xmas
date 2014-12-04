@@ -46,13 +46,13 @@
               <div class="control-group">
                 <label class="control-label" for="inputName">標題</label>
                 <div class="controls">
-                  <input type="text" id="title" name="title" placeholder="Enter title..." value="<?php echo $schedule_res->title;?>">建議字數：中文字 - 12個
+                  <input type="text" id="title" name="title" placeholder="Enter title..." value="<?php echo $schedule_res->title;?>" maxlength="10">建議字數：中文字 - 10個
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label" for="inputName">連結</label>
                 <div class="controls">
-                  <input type="text" id="link" name="link" placeholder="Enter link..." value="<?php echo $schedule_res->link;?>">
+                  <input type="text" id="link" name="link" placeholder="Enter link..." value="<?php echo $schedule_res->link;?>">網址請加上「http://」 or 「https://」
                 </div>
               </div>
               <div class="control-group">
@@ -60,6 +60,7 @@
                 <div class="controls">
                   <input type="file" id="file" name="file">建議尺寸：148px * 175px<br>
                   <?php if(!empty($schedule_res->pic)){?><img src="/Xmas/uploads/<?php echo $schedule_res->pic;?>"><?php }?>
+                  <input type="hidden" name="old_pic" id="old_pic" value="<?php echo $schedule_res->pic;?>">
                 </div>
               </div>
               <div class="control-group">
