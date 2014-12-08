@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<title>Qbon優惠牆 Xmas聖誕好康日曆</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="address=no">
@@ -11,18 +12,25 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta charset="ISO-8859-1">
 
-<title>Qbon</title>
+<!-- SEO -->
+<meta content="12月party月，Qbon優惠牆給你滿滿的優惠，每天早上10點，鎖定Qbon優惠牆聖誕好康日曆，讓你幸福好康無上限！" name="description" />
+<meta content="Qbon優惠牆、Qbon、聖誕好康日曆、Hiiir、聖誕節、聖誕、Merry Christmas 、Xmas、聖誕樹、美麗華、優惠 、好康、遠傳、Sales、12月、揪團、團購、折扣、禮物、perth's key、品木宣言、17life、gomaji、foodpanda" name="keywords" />
+<meta content="Qbon優惠牆 Xmas聖誕好康日曆" property="og:title">
+<meta content="12月party月，Qbon優惠牆給你滿滿的優惠，每天早上10點，鎖定Qbon優惠牆聖誕好康日曆，讓你幸福好康無上限！" property="og:description">
+<link rel="canonical" href="<?php echo base_url('welcome');?>">
+<meta content="<?php echo base_url('welcome');?>" property="og:url" />
+<meta property="og:image" content="<?php echo base_url().'resource/images/indeximage_p.jpg'?>">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="460">
+<link href="<?php echo base_url().'favicon.ico'?>" rel="shortcut icon" type="image/ico" />
+
 <link href="<?php echo $WEB_CSS;?>desktop-main.css" rel="stylesheet" type="text/css" />
 <!--<link rel="stylesheet" href="css/pgwslider.min.css">-->
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-
-<!--[if lt IE 9]>
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-<![endif]-->
-<!-- <script src="<?php //echo $WEB_JS;?>flycan.js" type="text/javascript"></script> -->
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,11 +40,13 @@
 
   ga('create', 'UA-50338452-3', 'auto');
   ga('send', 'pageview');
+  ga('create', 'UA-52741030-2', 'auto', {'name': 'XmasTracker'}); 
+  ga('XmasTracker.send', 'pageview');
 
 </script>
 </head>
-<body>
 
+<body>
     <!-- 表頭 -->
     <div id="TOP">
         <div id="TOPC">
@@ -50,7 +60,6 @@
     <div id="DAY">
         <div id="DAYC">
             <div id="Dtitle"></div>
-            
             <div id="DayM">
                 <ul>
                 <li class="AA">SUN</li>
@@ -65,6 +74,7 @@
             
             <div id="Dbox">
                 <ul class="pgwSlider">
+               <!-- 12月1日-6日 -->
                     <li class="DCboxG">
                         <div class="igbox">
                         <img src="<?php echo $WEB_IMG?>icon01.png" width="100%" />
@@ -72,33 +82,42 @@
                     </li>
                     <?php 
                     if($DailySchedules){
+                        $today = date("Y-m-d");
+                        $now_hour = date("H");
                         foreach ($DailySchedules as $date => $value) {
                             $title = $pic = $link = '';
                             $show_date = date('n月d日',strtotime($date));
-                            if($value){
+                            $show_schedule = 'n';
+
+                            if( ($date < $today) || ( ($date == $today) && ($now_hour >= '10') ) ){
+                                $show_schedule = 'y';
+                            }
+
+                            // 今天以前才出現當日排程
+                            if($show_schedule == 'y' && $value){
                                 $title = isset($value['title'])?$value['title']:'';
                                 $pic = isset($value['pic'])?'<img src="'.$value['pic'].'">':'';
                                 $link = isset($value['link'])?$value['link']:'';
                     ?>
-                            <li>
-                            <a href="<?php echo $link;?>" target="_blank">
-                                <div class="box">
-                                <?php echo $pic;?>
-                                </div>
-                            <span><?php echo $show_date;?></br><?php echo $title;?></span>
-                            </a>
-                            </li>
+                                <li>
+                                    <a href="<?php echo $link;?>" target="_blank">
+                                        <div class="box">
+                                        <?php echo $pic;?>
+                                        </div>
+                                    <span><?php echo $show_date;?></br><?php echo $title;?></span>
+                                    </a>
+                                </li>
                     <?php 
                             }else{
                                 $rand_imgno = rand(2,4);
                     ?>
-                            <li class="DCboxG">
-                                <div class="igbox">
-                                <img src="<?php echo $WEB_IMG;?>icon0<?php echo $rand_imgno;?>.png" width="100%" />
-                                </div>
-                                
-                                 <p class="daysss"><?php echo $show_date;?></p>
-                            </li>
+                                <li class="DCboxG">
+                                    <div class="igbox">
+                                    <img src="<?php echo $WEB_IMG;?>icon0<?php echo $rand_imgno;?>.png" width="100%" />
+                                    </div>
+                                    
+                                    <p class="daysss"><?php echo $show_date;?></p>
+                                </li>
                     <?php
                             }//判斷是否有schedule end
                         }//for end
@@ -106,19 +125,19 @@
                     ?>
                     <li class="DCboxG">
                         <div class="igbox">
-                        <img src="<?php echo $WEB_IMG;?>icon02.png" width="100%" />
+                        <img src="<?php echo $WEB_IMG?>icon02.png" width="100%" />
                         </div>
                     </li>
                     
                     <li class="DCboxG">
                         <div class="igbox">
-                        <img src="<?php echo $WEB_IMG;?>icon03.png" width="100%" />
+                        <img src="<?php echo $WEB_IMG?>icon03.png" width="100%" />
                         </div>
                     </li>
                     
                     <li class="DCboxG">
                         <div class="igbox">
-                        <img src="<?php echo $WEB_IMG;?>icon04.png" width="100%" />
+                        <img src="<?php echo $WEB_IMG?>icon04.png" width="100%" />
                         </div>
                     </li>
                 </ul>
@@ -151,50 +170,67 @@
     
     <!-- 表尾 -->
     <div id="FOOTER">
-        <div id="FOOTERC">
+        <div id="FOOTERTOP">
             <div id="logobox">
-                <div class="logo">
-                <p class="footypetitl">主辦單位</p>
-                <a href="https://www.facebook.com/Qbon.inside"  target="_blank">
-                <img src="<?php echo $WEB_IMG?>icon_flogo.png" width="111" height="33" border="0"/>
-                </a>
+                <div id="fboxone">
+                    <p class="footypetitl">主辦單位</p>
+                    <a href="https://www.facebook.com/Qbon.inside"  target="_blank">
+                    <img src="<?php echo $WEB_IMG?>icon_flogo.png" width="111" height="33" border="0"/>
+                    </a>
                 </div>
                 
-                <div class="logot">
-                <a href="http://www.hiiir.com/" target="_blank">
-                <img src="<?php echo $WEB_IMG?>icon_hiiir.png" width="63" height="50" border="0"/> 
-                </a>
+                <div id="fboxtwo">
+                    <a href="http://www.hiiir.com/" target="_blank">
+                    <img src="<?php echo $WEB_IMG?>icon_hiiir.png" width="63" height="50" border="0"/> 
+                    </a>
                 </div>
                 
-                <div class="logo">
-                <p class="footypetitl">協辦單位</p>
-                <a href="http://www.miramar.com.tw/" target="_blank">
-                <img src="<?php echo $WEB_IMG?>icon_miramar.png" width="80" height="42" border="0"/>
-                </a>
+                <div id="fboxthree">
+                    <p class="footypetitl">協辦單位</p>
+                    <a href="http://www.miramar.com.tw/" target="_blank">
+                    <img src="<?php echo $WEB_IMG?>icon_miramar.png" width="80" height="42" border="0"/>
+                    </a>
                 </div>
                 
-                <div class="logos">
-                <p class="footypetitl">贊助單位</p>
-                <a href="https://www.facebook.com/Originstw1?fref=ts" target="_blank">
-                 <img src="<?php echo $WEB_IMG?>icon_origin.png" width="63" height="50" border="0"/>
-                 </a>
+                <div id="fboxfor">
+                    <p class="footypetitl">贊助單位</p>
+                    <a href="https://www.facebook.com/Originstw1?fref=ts" target="_blank">
+                    <img src="<?php echo $WEB_IMG?>icon_origin.png" width="63" height="50"/>
+                    </a> 
                 </div>
                 
-                <div class="logott">
-                <a href="http://www.fecityonline.com/MegaCity/index.do" target="_blank">
-                <img src="<?php echo $WEB_IMG?>icon_black.png" width="58" height="33" border="0"/>
-                </a> 
+                <div id="fboxfive">
+                    <a href="http://www.fecityonline.com/MegaCity/index.do" target="_blank">
+                    <img src="<?php echo $WEB_IMG?>icon_big.png" width="143" height="33" border="0"/> 
+                    </a>
                 </div>
                 
-                <div class="logott">
-                <a href="https://www.facebook.com/cottondeer?fref=ts " target="_blank">
-                <img src="<?php echo $WEB_IMG?>IMG_8030.JPG" width="118" height="33" border="0"/>
-                </a> 
+                <div id="fboxsix">
+                    <a href="http://www.perthskey.com.tw/" target="_blank">
+                    <img src="<?php echo $WEB_IMG?>icon_black.png" width="58" height="33" border="0"/> 
+                    </a>
                 </div>
+                
+                <div id="fboxse">
+                    <a href="https://www.facebook.com/cottondeer?fref=ts" target="_blank">
+                    <img src="<?php echo $WEB_IMG?>IMG_8030.JPG" width="118" height="30" border="0"/> 
+                    </a>
+                </div>
+                
+                <div id="fboxat">
+                    <a href="https://www.facebook.com/Appleface.tw?slog=853970&seq=2131573584&rk=0&fbtype=274" target="_blank">
+                    <img src="<?php echo $WEB_IMG?>icon_last.png" width="143" height="33" border="0"/> 
+                    </a>
+                </div>
+                
             </div>
-            <p class="footype">時間軸科技股份有限公司版權所有2014 © Copyright Hiiir Inc. All Rights Reserved.</p>
+        </div>
+        
+        <div id="FOOTERDO">
+        <p class="footype">時間軸科技股份有限公司版權所有2014 © Copyright Hiiir Inc. All Rights Reserved.</p>
         </div>
     </div>
+    
 <!-- <script src="js/pgwslider.js"></script><script src="js/pgwslider.min.js"></script> -->
 </body>
 </html>

@@ -22,7 +22,7 @@ class Schedule extends CI_Controller {
 	{
 		if(!($this->session->userdata('logged_in'))){
 			//If no session, redirect to login page
-			redirect(base_url('index.php/admin/welcome'), 'location', 301);exit();
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
 		}
 		$this->data['schedules'] = $this->schedule_model->get_all();
 
@@ -33,7 +33,7 @@ class Schedule extends CI_Controller {
 	{
 		if(!($this->session->userdata('logged_in'))){
 			//If no session, redirect to login page
-			redirect(base_url('index.php/admin/welcome'), 'location', 301);exit();
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
 		}
 		$post_data = $this->input->post();
 
@@ -43,7 +43,7 @@ class Schedule extends CI_Controller {
 			// 判斷此日期是否已存在活動
 			$schedule = $this->schedule_model->chk_schedule($s_date);
 			if($schedule){
-				$this->basetools->alert_redirect('此日期已有活動，請重新輸入!!', base_url('index.php/admin/schedule/add'));exit();
+				$this->basetools->alert_redirect('此日期已有活動，請重新輸入!!', base_url('admin/schedule/add'));exit();
 			}else{
 				$link = trim($post_data['link']);
 				if((strpos ($link, "http://")) === false && (strpos ($link, "https://")) === false){
@@ -67,9 +67,9 @@ class Schedule extends CI_Controller {
 					);
 					$update_schedule = $this->schedule_model->edit_schedule($update_array,$insert_id);
 
-					$this->basetools->alert_redirect('新增完成!!', base_url('index.php/admin/schedule'));	
+					$this->basetools->alert_redirect('新增完成!!', base_url('admin/schedule'));	
 				}else{
-					$this->basetools->alert_redirect('發生錯誤，請重新輸入!!', base_url('index.php/admin/schedule/add'));exit();	
+					$this->basetools->alert_redirect('發生錯誤，請重新輸入!!', base_url('admin/schedule/add'));exit();	
 				}
 			}
 		}else{
@@ -80,7 +80,7 @@ class Schedule extends CI_Controller {
 	public function edit($id){
 		if(!($this->session->userdata('logged_in'))){
 			//If no session, redirect to login page
-			redirect(base_url('index.php/admin/welcome'), 'location', 301);exit();
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
 		}
 		$this->data['schedule_res'] = $this->schedule_model->get_schedule($id);
 
@@ -91,7 +91,7 @@ class Schedule extends CI_Controller {
 				// 判斷此日期是否已存在活動
 				$schedule = $this->schedule_model->chk_schedule($s_date,$id);
 				if($schedule){
-					$this->basetools->alert_redirect('此日期已有活動，請重新輸入!!', base_url('index.php/admin/schedule/edit/'.$id));exit();
+					$this->basetools->alert_redirect('此日期已有活動，請重新輸入!!', base_url('admin/schedule/edit/'.$id));exit();
 				}else{
 					$link = trim($post_data['link']);
 					if((strpos ($link, "http://")) === false && (strpos ($link, "https://")) === false){
@@ -117,14 +117,14 @@ class Schedule extends CI_Controller {
 					}
 					
 					if($update_schedule){
-						$this->basetools->alert_redirect('修改完成!!', base_url('index.php/admin/schedule'));	
+						$this->basetools->alert_redirect('修改完成!!', base_url('admin/schedule'));	
 					}
 				}
 			}else{
 				$this->load->view('admin/schedule/edit',$this->data);		
 			}
 		}else{
-			$this->basetools->alert_redirect('此筆資料不存在!!', base_url('index.php/admin/schedule'));exit();	
+			$this->basetools->alert_redirect('此筆資料不存在!!', base_url('admin/schedule'));exit();	
 		}
 		
 
@@ -133,12 +133,12 @@ class Schedule extends CI_Controller {
 	public function del($id){
 		if(!($this->session->userdata('logged_in'))){
 			//If no session, redirect to login page
-			redirect(base_url('index.php/admin/welcome'), 'location', 301);exit();
+			redirect(base_url('admin/welcome'), 'location', 301);exit();
 		}
 		if(is_numeric($id)){
 			$del_res = $this->schedule_model->del_schedule($id);
 			if($del_res){
-				$this->basetools->alert_redirect('刪除完成!!', base_url('index.php/admin/schedule'));exit();
+				$this->basetools->alert_redirect('刪除完成!!', base_url('admin/schedule'));exit();
 			}
 		}
 	}

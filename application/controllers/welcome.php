@@ -75,8 +75,7 @@ class Welcome extends CI_Controller {
 			}
 			
 		}
-		// $this->data['Todate'] = date('Y-m-d');
-		$this->data['Todate'] = '2014-12-03';
+		$this->data['Todate'] = date('Y-m-d');
 		// 判斷載入手機或手機版面
 		
 		if($agent != 'desktop' || $debug == 'mobile'){

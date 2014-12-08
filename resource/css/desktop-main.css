@@ -264,7 +264,7 @@ ul.pgwSlider > li img,
 	color:#fff;
 	line-height:1.4;
 	display: inline-block;
-    padding: 10px 130px;
+    padding: 10px 100px;
     margin-top: 20px;
     background: #f48b38;
     -moz-border-radius: 5px;
@@ -310,9 +310,7 @@ ul.pgwSlider > li img,
 
 #STORE #STOREC {
 	width:100%;
-	height:725px;
-	background-image:url(../images/storebg.jpg);
-	background-repeat:repeat-x;  
+	height:725px; 
 	}
 	
 #STORE #STOREC #sboxbg{
@@ -364,61 +362,90 @@ ul.pgwSlider > li img,
 	
 #FOOTER {
 	width:100%;
+	height:170px;
+	}
+	
+#FOOTER #FOOTERTOP {
+	float:left;
+	width:100%;
 	height:130px;
 	background-image:url(../images/footerbg.jpg);
 	background-repeat:repeat-x;
 	}
 	
-#FOOTER #FOOTERC {
+#FOOTER #FOOTERTOP #logobox {
 	margin:0 auto;
-	width:1200px;
+	width:1050px;
 	height:130px;
 	}
 	
-#FOOTER #FOOTERC #logobox{
-	margin:0 auto;
-	width:680px;
-	height:70px;
-	padding-top:10px;
-	}
-	
-#FOOTER #FOOTERC #logobox .logo {
+#FOOTER #FOOTERTOP #logobox #fboxone {
 	float:left;
 	width:130px;
-	margin-right:10px;
-	}
-	
-#FOOTER #FOOTERC #logobox .logos {
-	float:left;
-	width:80px;
-	margin-right:10px;
+	margin-right:20px;
 	}
 
-#FOOTER #FOOTERC #logobox .logot {
+#FOOTER #FOOTERTOP #logobox #fboxtwo {
 	float:left;
-	width:80px;
-	margin:20px 20px 0 0;
-	}
-	
-#FOOTER #FOOTERC #logobox .logott {
-	float:left;
-	width:80px;
-	margin:35px 0 0 0;
+	width:90px;
+	margin:45px 20px 0 0;
 	}
 
+#FOOTER #FOOTERTOP #logobox #fboxthree {
+	float:left;
+	width:100px;
+	margin-right:20px;
+	}
 	
+#FOOTER #FOOTERTOP #logobox #fboxfor {
+	float:left;
+	width:80px;
+	margin-right:20px;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #fboxfive {
+	float:left;
+	width:160px;
+	margin:60px 20px 0 0;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #fboxsix {
+	float:left;
+	width:70px;
+	margin:60px 20px 0 0;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #fboxse {
+	float:left;
+	width:118px;
+	margin:60px 20px 0 0;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #fboxat {
+	float:left;
+	width:160px;
+	margin:60px 0 0 0;
+	}
+
+#FOOTER #FOOTERDO {
+	float:left;
+	width:100%;
+	height:40px;
+	background-color:#d991a9;
+	}
+
 .footypetitl {
 	display:block;
 	font-size:12px;
-	color:#fff;
-	padding-bottom:10px;
-	}	
+	color:#d991a9;
+	padding:20px 0 20px 0;
+	}
 	
 .footype {
 	margin:0 auto;
 	display:block;
-	width:500px;
 	font-size:12px;
 	color:#fff;
-	padding-top:30px;
-	}
+	line-height:40px;
+	text-align:center;
+	}	

@@ -28,17 +28,17 @@
     <script type="text/javascript">
     function del_schedule(id){
       if(confirm('確定刪除嗎?')){
-        window.location.href="<?php echo base_url('index.php/admin/schedule/del/" + id + "');?>";
+        window.location.href="<?php echo base_url('admin/schedule/del/" + id + "');?>";
       }
     }
     </script>
   </head>
 
   <body>
-    <?php echo  file_get_contents(base_url('index.php/admin/base/topbar'))?>
+    <?php echo  file_get_contents(base_url('admin/base/topbar'))?>
     <div class="container-fluid">
       <div class="row">
-        <?php echo  file_get_contents(base_url('index.php/admin/base/sidebar'))?>
+        <?php echo  file_get_contents(base_url('admin/base/sidebar'))?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">日曆列表</h1>
           <div class="table-responsive">
@@ -64,7 +64,7 @@
                   <td><?php echo $value->title;?></td>
                   <td><?php if(!empty($value->pic)){?><img src="/Xmas/uploads/<?php echo $value->pic;?>"><?php }?></td>
                   <td><a href="<?php echo $value->link;?>" target="_blank"><?php echo $value->link;?></a></td>
-                  <td><a href="<?php echo base_url('index.php/admin/schedule/edit/'.$value->id);?>">編輯</a></td>
+                  <td><a href="<?php echo base_url('admin/schedule/edit/'.$value->id);?>">編輯</a></td>
                 </tr>
                 <?php
                   }

@@ -31,10 +31,9 @@ class Welcome extends CI_Controller {
 				);
 
 				$this->session->set_userdata('logged_in', $sess_array);
-
-				redirect('admin/schedule', 'location', 301);exit();
+				$this->basetools->alert_redirect('成功登入!!', base_url('admin/schedule'));exit();
 			}else{
-				$this->basetools->alert_redirect('帳號或密碼錯誤，請重新輸入!!', base_url('index.php/admin/welcome'));exit();
+				$this->basetools->alert_redirect('帳號或密碼錯誤，請重新輸入!!', base_url('admin/welcome'));exit();
 			}
 		}else{
 			$this->load->view('admin/login',$this->data);	
@@ -45,7 +44,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->session->unset_userdata('logged_in');
 		session_destroy();
-		redirect('admin/welcome', 'location', 301);exit();
+		$this->basetools->alert_redirect('成功登出!!', base_url('admin/welcome'));exit();
 	}
 }
 

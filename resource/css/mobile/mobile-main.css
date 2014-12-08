@@ -64,7 +64,6 @@ html{
 
 .ptype {
 	float:left;
-	width:50%;
 	height:100%;
 	margin:10px 5px 5px 5px ;
 	}
@@ -108,7 +107,6 @@ html{
 	
 .ptypet {
 	float:left;
-	width:60%;
 	height:100%;
 	margin:10px 5px 5px 5px ;
 	}
@@ -336,16 +334,15 @@ h2.active {
 #STOREE #STOREct #LEFTbox li.apple a:hover{background-position:-132px -42px}
 
 
-/*--- 1204 start ---*/	
+
 #STOREE #STOREct #RIGHTbox {
 	margin:0 auto;
-	width:430px;
-	height:388px;
+	width:100%;
+	height:361px;
 	}
-/*--- 1204 end ---*/	
+
 	
 #STOREE #STOREct #RIGHTbox img{
-	float:left;
 	width:100%;
 	height:auto;
 	}
@@ -374,61 +371,104 @@ h2.active {
 	width:100%;
 	height:100%;
 	}
+
+#FOOTER #FOOTERTOP {
+	width:100%;
+	height:300px;
+	}
 	
-#FOOTER #FOOTERC {
+#FOOTER #FOOTERTOP #logobox {
+	margin:0 auto;
+	width:100%;
+	height:300px;
+	padding:0 0 0 10px;
+	}
+
+#FOOTER #FOOTERTOP #logobox #BIGFBOX {
+	margin:0 auto;
+	width:100%;
+	float:left;
+	}
+
+#FOOTER #FOOTERTOP #logobox #BIGFBOXT {
+	margin:0 auto;
+	width:100%;
+	float:left;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #BIGFBOXTT {
+	margin:0 auto;
+	width:100%;
+	float:left;
+	padding:20px 0 20px 0;
+	}
+		
+#FOOTER #FOOTERTOP #logobox #BIGFBOX #fboxone {
+	float:left;
+	width:130px;
+	padding:0 20px 0 0;
+	}
+
+#FOOTER #FOOTERTOP #logobox #BIGFBOX #fboxtwo {
+	float:left;
+	width:90px;
+	padding:45px 20px 0 0;
+	}
+
+#FOOTER #FOOTERTOP #logobox #BIGFBOX #fboxthree {
+	float:left;
+	width:100px;
+	padding-right:20px;
+	}	
+	
+#FOOTER #FOOTERTOP #logobox #BIGFBOXT #fboxfor {
+	float:left;
+	width:80px;
+	padding:0 20px 0 0;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #BIGFBOXT #fboxfive {
+	float:left;
+	width:160px;
+	padding:60px 20px 0 0;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #BIGFBOXT #fboxsix {
+	float:left;
+	width:70px;
+	padding:60px 20px 0 0;
+	}
+	
+	
+#FOOTER #FOOTERTOP #logobox #BIGFBOXTT #fboxse {
+	float:left;
+	width:130px;
+	padding:0 20px 0 0;
+	}
+	
+#FOOTER #FOOTERTOP #logobox #BIGFBOXTT #fboxat {
+	float:left;
+	width:120px;
+	}
+
+#FOOTER #FOOTERDO {
 	float:left;
 	width:100%;
-	height:250px;
-	background-image:url(../../images/mobile/footer_p.jpg);
-	background-repeat:repeat-x;
+	height:40px;
 	background-color:#d991a9;
 	}
 
-#FOOTER #FOOTERC .logobox{
-	clear:both;
-	margin:0 auto;
-	width:350px;
-	height:70px;
-	padding-top:25px;
-	}
-	
-#FOOTER #FOOTERC .logobox .logo {
-	float:left;
-	width:120px;
-	margin-right:10px;
-	}
-
-#FOOTER #FOOTERC .logobox .logot {
-	float:left;
-	width:80px;
-	margin:15px 10px 0 0;
-	}
-
-#FOOTER #FOOTERC .logobox .logos {
-	float:left;
-	width:80px;
-	margin-right:10px;
-	}
-	
-#FOOTER #FOOTERC .logobox .logott {
-	float:left;
-	width:80px;
-	margin:25px 10px 0 0;
-	}
-
-	
 .footypetitl {
 	display:block;
 	font-size:12px;
-	color:#fff;
-	padding-bottom:10px;
-	}	
+	color:#d991a9;
+	padding:20px 0 20px 0;
+	}
 	
 .footype {
 	margin:0 auto;
 	display:block;
-	width:250px;
 	font-size:12px;
 	color:#fff;
-	padding-top:50px;
-	}
+	text-align:center;
+	}	
