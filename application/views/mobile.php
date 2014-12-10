@@ -60,7 +60,7 @@
         <?php
         $now_hour = date("H");
         if($TodateSchedules){
-            if(($now_hour >= '10')){
+            // if(($now_hour >= '10')){
                 $pic = isset($TodateSchedules['pic'])?'<img src="'.$TodateSchedules['pic'].'" width="100%">':'';
                 $title = isset($TodateSchedules['title'])?$TodateSchedules['title']:'';
                 $show_date = date('n月d日',strtotime($Todate));    
@@ -76,7 +76,7 @@
             </div>
         </div>
         <?php 
-            }
+            // }
         }
         ?>
         <div class="container">
@@ -118,7 +118,8 @@
                         $show_schedule='n';
 
 
-                        if( ($value['date'] < $today) || (  ($value['date'] == $today) && ($now_hour >= '10') ) ){
+                        // if( ($value['date'] < $today) || (  ($value['date'] == $today) && ($now_hour >= '10') ) ){
+                        if( ($value['date'] < $today) || (  ($value['date'] == $today) ) ){
                             $show_schedule='y';
                         }
 
@@ -154,7 +155,7 @@
     <div id="EVENT">
         <div id="EVENTt">
             <div id="Eboxo">
-                <a href="www.zeusdesign.com.tw" target="_blank">
+                <a href="https://www.facebook.com/events/674664762644246/?ref=22" target="_blank">
                 <img src="<?php echo $WEB_IMG;?>mobile/eventbg_p.jpg" width="100%" border="0"/>
                 </a>
             </div>

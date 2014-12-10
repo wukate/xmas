@@ -25,7 +25,15 @@
 <meta property="og:image:height" content="460">
 <link href="<?php echo base_url().'favicon.ico'?>" rel="shortcut icon" type="image/ico" />
 
-<link href="<?php echo $WEB_CSS;?>desktop-main.css" rel="stylesheet" type="text/css" />
+<?php
+//偵測瀏覽器  
+$agent = $_SERVER['HTTP_USER_AGENT'];
+if((strpos($agent,"Safari")) || (strpos($agent,"Opera")) || (strpos($agent,"Chrome")))
+    echo '<link href="' . $WEB_CSS . 'desktop-main.css" rel="stylesheet" type="text/css" />';
+else 
+    echo '<link href="' . $WEB_CSS . 'desktop-main-ff.css" rel="stylesheet" type="text/css" />';
+?>
+
 <!--<link rel="stylesheet" href="css/pgwslider.min.css">-->
 
 <!--[if lt IE 9]>
@@ -47,7 +55,8 @@
 </head>
 
 <body>
-    <!-- 表頭 -->
+    <div id="fb-root"></div>
+    
     <div id="TOP">
         <div id="TOPC">
         <a href="https://www.facebook.com/Qbon.inside" target="_blank">
@@ -89,7 +98,8 @@
                             $show_date = date('n月d日',strtotime($date));
                             $show_schedule = 'n';
 
-                            if( ($date < $today) || ( ($date == $today) && ($now_hour >= '10') ) ){
+                            // if( ($date < $today) || ( ($date == $today) && ($now_hour >= '10') ) ){
+                            if( ($date < $today) || ( ($date == $today) ) ){
                                 $show_schedule = 'y';
                             }
 
@@ -109,14 +119,14 @@
                                 </li>
                     <?php 
                             }else{
-                                $rand_imgno = rand(2,4);
+                                $rand_imgno = rand(5,8);
                     ?>
                                 <li class="DCboxG">
-                                    <div class="igbox">
+                                    <div class="igboxc">
                                     <img src="<?php echo $WEB_IMG;?>icon0<?php echo $rand_imgno;?>.png" width="100%" />
                                     </div>
                                     
-                                    <p class="daysss"><?php echo $show_date;?></p>
+                                     <p class="daysss"><?php echo $show_date;?></p>
                                 </li>
                     <?php
                             }//判斷是否有schedule end
@@ -148,7 +158,7 @@
     <!-- FB活動 -->
     <div id="EVENT">
         <div id="EVENTC">
-            <a class="btn-orange" href="https://www.facebook.com/Qbon.inside" target="_blank">立即上傳</a>
+            <a class="btn-orange" href="https://www.facebook.com/events/674664762644246/?ref=22" target="_blank">立即上傳</a>
         </div>
     </div>
     

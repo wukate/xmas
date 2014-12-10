@@ -47,7 +47,7 @@
               <div class="control-group">
                 <label class="control-label" for="inputName">標題</label>
                 <div class="controls">
-                  <input type="text" id="title" name="title" placeholder="Enter title..." maxlength="10">建議字數：中文字 - 10個
+                  <input type="text" id="title" name="title" placeholder="Enter title...">
                 </div>
               </div>
               <div class="control-group">
